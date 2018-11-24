@@ -14,7 +14,8 @@
   "dependencies": {
     "autoprefixer": "^7.2.1",
     "react": "^16.7.0-alpha.2",
-    "react-dom": "^16.7.0-alpha.2"
+    "react-dom": "^16.7.0-alpha.2",
+    "xml2js": "^0.4.19"
   },
   "build": {
     "appId": "hungry.positive.isotope",
