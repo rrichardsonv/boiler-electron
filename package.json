@@ -1,0 +1,52 @@
+{
+  "name": "boilerplate",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html -d build/",
+    "start-dev": "ELECTRON_START_URL=http://localhost:1234 electron .",
+    "start": "cross-env NODE_ENV=development electron .",
+    "build": "cross-env NODE_ENV=production parcel build ./src/index.html -d build/ --public-url ./",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "autoprefixer": "^7.2.1",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2"
+  },
+  "build": {
+    "appId": "hungry.positive.isotope",
+    "mac": {
+      "category": "rss.feed.reader"
+    },
+    "files": [
+      "main.js",
+      "build/*"
+    ]
+  },
+  "postcss": {
+    "modules": false,
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          ">1%",
+          "last 4 versions",
+          "Firefox ESR",
+          "not ie < 9"
+        ],
+        "flexbox": "no-2009"
+      }
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "cross-env": "^5.1.1",
+    "electron": "^3.0.10",
+    "electron-builder": "^20.28.4",
+    "electron-reload": "^1.2.5",
+    "parcel-bundler": "latest"
+  }
+}
